@@ -1,24 +1,52 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# consultation_app DB設計
 
-Things you may want to cover:
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 
-* Ruby version
+### Association
+- has_many :posts
+- has_many :comments
+- has_one :profile, dependent: :destroy
 
-* System dependencies
+## profilesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|prefecture_id|integer|null: false|
+|introduction|text||
+|user_id|references|null: false, foreign_key: true|
 
-* Configuration
+### Association
+- belongs_to :user, optional: true
+- belongs_to_active_hash :prefecture
 
-* Database creation
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|content|text||
+|image|string||
+|user_id|references|null: false, foreign_key: true|
 
-* Database initialization
+### Association
+- has_many :comments
+- belongs_to :user
 
-* How to run the test suite
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|content|text|null: false|
+|user_id|references|null: false, foreign_key: true|
+|post_id|references|null: false, foreign_key: true|
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
+- belongs_to :post
