@@ -1,0 +1,21 @@
+%h2 住所情報登録
+
+= form_for @profile do |f|
+  = render "devise/shared/error_messages", resource: @profile
+
+  .field
+    = f.label :nickname
+    = f.text_field :nickname
+
+  .field
+    = f.label :prefecture_id
+    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: true
+
+  .field
+    = f.label :introduction
+    = f.text_field :introduction
+
+  .actions
+    = f.submit "Sign up"
+
+= render "devise/shared/links"
