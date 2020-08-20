@@ -1,37 +1,55 @@
-%h2 Sign up
-= form_for @user, url: user_registration_path do |f|
-  = render "devise/shared/error_messages", resource: @user
-  .field
-    = f.label :last_name
-    %br/
-    = f.text_field :last_name
-  .field
-    = f.label :first_name
-    %br/
-    = f.text_field :first_name
-  .field
-    = f.label :last_name_kana
-    %br/
-    = f.text_field :last_name_kana
-  .field
-    = f.label :first_name_kana
-    %br/
-    = f.text_field :first_name_kana
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Next"
-= render "devise/shared/links"
+.User
+  %h1
+    =link_to "relife", root_path
+    
+  .User__wrapper
+    %h2.User__title 会員登録
+    = form_for @user, url: user_registration_path do |f|
+      = render "devise/shared/error_messages", resource: @user
+      
+      .Name-form
+        .Name-form__wrapper
+          %ul.Name-form__field
+            %li 名字
+            %li.Name-form__required 必須
+          = f.text_field :last_name, class: "Name-form__input"
+        .Name-form__wrapper
+          %ul.Name-form__field
+            %li 名前
+            %li.Name-form__required 必須
+          = f.text_field :first_name, class: "Name-form__input"
+
+      .Name-form
+        .Name-form__wrapper
+          %ul.Name-form__field
+            %li 名字(かな)
+            %li.Name-form__required 必須
+          = f.text_field :last_name_kana, class: "Name-form__input"
+        .Name-form__wrapper
+          %ul.Name-form__field
+            %li 名前(かな)
+            %li.Name-form__required 必須
+          = f.text_field :first_name_kana, class: "Name-form__input"
+
+      .User-form
+        %ul.User-form__field
+          %li メールアドレス
+          %li.User-form__required 必須
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "User-form__input"
+
+      .User-form
+        %ul.User-form__field
+          %li パスワード
+          %li.User-form__required 必須
+        = f.password_field :password, autocomplete: "new-password", placeholder: '6文字以上', class: "User-form__input"
+
+      .User-form
+        %ul.User-form__field
+          %li パスワード(確認)
+          %li.User-form__required 必須
+        = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: '6文字以上', class: "User-form__input"
+
+      .Information
+        = link_to "▶︎アカウントをお持ちの方はこちら", new_user_session_path, class: "Information__link"
+        .Information__submit
+          = f.submit "次へ進む", class: "Information__submit--btn"
