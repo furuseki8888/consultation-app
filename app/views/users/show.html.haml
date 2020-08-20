@@ -1,0 +1,13 @@
+.user-info
+  ユーザー情報
+  .user-name
+    氏名：
+    = current_user.last_name
+    = current_user.first_name
+  .user-name-kana
+    氏名(かな)：
+    = current_user.last_name_kana
+    = current_user.first_name_kana
+  .mail
+    メールアドレス：
+    = current_user.email
