@@ -1,21 +1,30 @@
-%h2 住所情報登録
+.User
+  %h1
+    =link_to "relife", root_path
 
-= form_for @profile do |f|
-  = render "devise/shared/error_messages", resource: @profile
+  .User__wrapper
+    %h2.User__title プロフィール登録
+    = form_for @profile do |f|
+      = render "devise/shared/error_messages", resource: @profile
 
-  .field
-    = f.label :nickname
-    = f.text_field :nickname
+      .Profile-form
+        .Profile-form-wrapper
+          %ul.Profile-form__field
+            %li ニックネーム
+            %li.Profile-form__required 必須
+          = f.text_field :nickname, class: "Profile-form__input"
 
-  .field
-    = f.label :prefecture_id
-    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: true
+        .Profile-form-wrapper
+          %ul.Profile-form__field
+            %li お住まいの地域
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: true, class: "Profile-form__select"
 
-  .field
-    = f.label :introduction
-    = f.text_field :introduction
+      .User-form
+        %ul.User-form__field
+          %li 自己紹介
+        = f.text_area :introduction, class: "User-form__area"
 
-  .actions
-    = f.submit "Sign up"
-
-= render "devise/shared/links"
+      .Information
+        = link_to "▶︎アカウントをお持ちの方はこちら", new_user_session_path, class: "Information__link"
+        .Information__submit
+          = f.submit "登録する", class: "Information__submit--btn"
