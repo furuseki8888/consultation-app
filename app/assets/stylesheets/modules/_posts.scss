@@ -1,3 +1,144 @@
 * {
   box-sizing: border-box;
 }
+
+.top-wrapper {
+
+  // 投稿ボタン
+  .Post-btn {
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    background-color: #71d19e;
+    border-radius: 10%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    &__link {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    &__items {
+      width: 90px;
+      height: 90px;
+      padding: 5px;
+
+      &--icon {
+        font-size: 50px;
+      }
+    }
+  }
+
+  // ヒーローイメージ
+  .hero-wrapper {
+    background-image: url(dawn-3.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 500px;
+
+    .Hero {
+      padding: 100px 0 0 80px;
+
+      &__message {
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0,0,0,0.8);
+        font-size: 20px;
+
+        &--large {
+          font-size: 40px;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  // 投稿表示箇所
+  .main-wrapper {
+    width: 100vw;
+    height: calc(100% - 555px);
+    background-color: #fffee0;
+    padding: 40px 0 40px;
+
+    // 投稿一覧ボタン
+    .Post-index-btn {
+      background-color: #cdebc6;
+      width: 400px;
+      height: 70px;
+      border-radius: 20px;
+      border-bottom: solid 4px #bfbfbf;
+      margin: 0 auto 30px;
+
+      &__link {
+        color: #646166;
+        font-size: 23px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      &__items {
+        width: 400px;
+        height: 70px;
+
+        &--text {
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+
+  // 最新投稿
+  .new-post-wrapper {
+    width: 100vw;
+
+    h2 {
+      color: #646166;
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      width: 150px;
+      margin: 100px auto 30px;
+      border-bottom: solid 4px #ff7a8f;
+    }
+
+    .new-post-list {
+      width: 500px;
+      margin: 0 auto;
+
+      .New-post {
+        color: #424b54;
+        background-color: #e0ffd9;
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        border-bottom: solid 4px #bfbfbf;
+
+        &__prof {
+          display: flex;
+        }
+
+        &__name {
+          color: #646166;
+          font-size: 14px;
+          font-weight: bold;
+          margin-right: 5px;
+        }
+        &__time {
+          color: #9b9b9b;
+          font-size: 12px;
+        }
+        &__title {
+          font-size: 18px;
+          font-weight: bold;
+          border-bottom: 1px solid #9b9b9b;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}

@@ -24,7 +24,6 @@
           %li 自己紹介
         = f.text_area :introduction, class: "User-form__area"
 
-      .Information
-        = link_to "▶︎アカウントをお持ちの方はこちら", new_user_session_path, class: "Information__link"
+      .Information.Information--right
         .Information__submit
           = f.submit "登録する", class: "Information__submit--btn"
