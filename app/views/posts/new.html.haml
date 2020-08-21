@@ -1,0 +1,19 @@
+= render "home/header"
+.post-new-form-wrapper
+  .post-new-form
+    %h1 今のお悩みを入力してください
+    = form_with model: @post, local: true do |f|
+      - if @post.errors.any?
+        .post-errors
+          %ul
+            - @post.errors.full_messages.each do |post|
+              %li= post
+      .post-form-field
+        .Post-form
+          .Post-form__label タイトル
+          = f.text_field :title, class: "Post-form__input"
+        .Post-form
+          .Post-form__label 本文
+          = f.text_area :content, class: "Post-form__area"
+      .Post-form-submit
+        = f.submit "投稿する", class: "Post-form-submit__btn"
