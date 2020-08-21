@@ -24,6 +24,10 @@
     margin: 0 auto;
     padding: 30px 60px;
     background-color: #fff;
+
+    #error_explanation {
+      color: red;
+    }
   }
 
   &__title {
