@@ -6,7 +6,7 @@
     .Header__items
       - if user_signed_in?
         %p
-          = @profile.nickname
+          = current_user.profile.nickname
         %p
           = link_to "マイページ", user_path(current_user.id)
         %p

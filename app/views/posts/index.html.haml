@@ -1,9 +1,6 @@
-%h1 トップページ
-- if user_signed_in?
-  %h2 ログインしています
-  = link_to "ログアウト", destroy_user_session_path, method: :delete
-  = link_to "マイページ", user_path(current_user.id)
-- else
-  %h2 ログインしていません
-  = link_to "新規登録", new_user_registration_path
-  = link_to "ログイン", new_user_session_path
+= render 'home/header'
+
+.post-index-wrapper
+  %h2 投稿一覧
+  .post-holder
+    = render @posts

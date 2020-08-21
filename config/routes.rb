@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'profiles', to: 'users/registrations#new_profile'
     post 'profiles', to: 'users/registrations#create_profile'
   end
-  root "posts#index"
+  root "home#index"
   resources :users, only: :show
+  resources :posts, only: [:index, :new, :create]
 end

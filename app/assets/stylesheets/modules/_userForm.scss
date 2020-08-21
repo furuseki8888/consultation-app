@@ -1,6 +1,5 @@
 .User {
   width: 100vw;
-  // height: 100vh;
   background-color: #cdebc6;
   color: #646166;
   padding: 100px 0 300px;
@@ -25,6 +24,10 @@
     margin: 0 auto;
     padding: 30px 60px;
     background-color: #fff;
+
+    #error_explanation {
+      color: red;
+    }
   }
 
   &__title {
@@ -158,6 +161,10 @@
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+
+    &--right {
+      margin-left: 250px;
+    }
 
     &__link {
       color: #53b17f;
