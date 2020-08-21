@@ -1,0 +1,15 @@
+.Post-item
+  .Post-prof
+    .Post-prof__name
+      = post.user.profile.nickname
+    .Post-prof__time
+      = post.created_at.strftime("%Y/%m/%d %H:%M")
+  .Post-item__title
+    = post.title
+  .Post-item__text
+    = post.content
+  .Post-empathy
+    %p.Post-empathy__text
+      共感
+    = icon('fas', 'heart', class: 'Post-empathy__icon')
+    %p.Post-empathy__number 10
