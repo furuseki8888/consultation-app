@@ -84,6 +84,11 @@
         font-weight: bold;
         border-bottom: 1px solid #9b9b9b;
         margin-bottom: 5px;
+
+        a {
+          color: #424b54;
+          text-decoration: none;
+        }
       }
       &__text {
         color: #424b54;
