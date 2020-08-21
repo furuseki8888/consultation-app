@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path
+      redirect_to root_path, notice: "投稿が完了しました"
     else
       render :new
     end
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   def login_required
     unless user_signed_in?
-      redirect_to root_path
+      redirect_to root_path, notice: "ログインしてください"
     end
   end
 end
