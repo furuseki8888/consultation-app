@@ -1,64 +1,17 @@
 .posts
-  .Post
-    .User-prof
-      .User-prof__name
-        = @profile.nickname
-      .User-prof__time
-        2020/08/20 10:10
-    .Post__title
-      体重が減らない！
-    .Post__text
-      体重が減りません。ダイエットしているのですがなかなか効果が出ません。同じ悩みを持っている人はいませんか？
-    .Empathy
-      %p.Empathy__text
-        共感
-      = icon('fas', 'heart', class: 'Empathy__icon')
-      %p.Empathy__number 10
-
-  .Post
-    .User-prof
-      .User-prof__name
-        = @profile.nickname
-      .User-prof__time
-        2020/08/20 10:10
-    .Post__title
-      体重が減らない！
-    .Post__text
-      体重が減りません。ダイエットしているのですがなかなか効果が出ません。同じ悩みを持っている人はいませんか？
-    .Empathy
-      %p.Empathy__text
-        共感
-      = icon('fas', 'heart', class: 'Empathy__icon')
-      %p.Empathy__number 10
-
-  .Post
-    .User-prof
-      .User-prof__name
-        = @profile.nickname
-      .User-prof__time
-        2020/08/20 10:10
-    .Post__title
-      体重が減らない！
-    .Post__text
-      体重が減りません。ダイエットしているのですがなかなか効果が出ません。同じ悩みを持っている人はいませんか？
-    .Empathy
-      %p.Empathy__text
-        共感
-      = icon('fas', 'heart', class: 'Empathy__icon')
-      %p.Empathy__number 10
-
-  .Post
-    .User-prof
-      .User-prof__name
-        = @profile.nickname
-      .User-prof__time
-        2020/08/20 10:10
-    .Post__title
-      体重が減らない！
-    .Post__text
-      体重が減りません。ダイエットしているのですがなかなか効果が出ません。同じ悩みを持っている人はいませんか？
-    .Empathy
-      %p.Empathy__text
-        共感
-      = icon('fas', 'heart', class: 'Empathy__icon')
-      %p.Empathy__number 10
+  - @posts.each do |post|
+    .Post
+      .User-prof
+        .User-prof__name
+          = post.user.profile.nickname
+        .User-prof__time
+          = post.created_at.strftime("%Y/%m/%d %H:%M")
+      .Post__title
+        = post.title
+      .Post__text
+        = post.content
+      .Empathy
+        %p.Empathy__text
+          共感
+        = icon('fas', 'heart', class: 'Empathy__icon')
+        %p.Empathy__number 10
