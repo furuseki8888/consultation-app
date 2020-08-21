@@ -1,0 +1,110 @@
+.mypage-wrapper {
+  display: flex;
+
+  // プロフィール
+  .profile-info {
+    width: 250px;
+    height: calc(100vh - 55px);
+    background-color: #cdebc6;
+    overflow: scroll;
+
+    .Profile {
+      width: 200px;
+      margin: 10px auto;
+      
+      &__main-image {
+        padding: 20px 0 20px;
+        text-align: center;
+      }
+      &__image {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        vertical-align: bottom;
+        border-radius: 40%;
+      }
+
+      &__name {
+        color: #646166;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      &__area {
+        width: 80px;
+        height: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #fffc99;
+        border: 1px solid #fffc99;
+        border-radius: 40%;
+        margin: 10px auto 20px;
+      }
+
+      &__introduction {
+        padding: 5px;
+        background-color: #fff;
+      }
+    }
+  }
+
+
+  // 投稿
+  .posts {
+    width: calc(100vw - 200px);
+    height: calc(100vh - 55px);
+    background-color: #fffee0;
+    padding: 15px;
+    overflow: scroll;
+
+    .Post {
+      margin-bottom: 40px;
+
+      .User-prof {
+        display: flex;
+
+        &__name {
+          color: #646166;
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        &__time {
+          color: #9b9b9b;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+
+      &__title {
+        color: #424b54;
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: 1px solid #9b9b9b;
+        margin-bottom: 5px;
+      }
+      &__text {
+        color: #424b54;
+      }
+
+      .Empathy {
+        display: flex;
+        font-size: 12px;
+        color: #9b9b9b;
+        margin-top: 4px;
+
+        &__text {
+          margin: 0 5px;
+        }
+
+        &__icon {
+          vertical-align: center;
+          margin: 4px 2px 0 0;
+        }
+      }
+    }
+  }
+
+}
