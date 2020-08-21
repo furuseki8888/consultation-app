@@ -1,0 +1,10 @@
+.profile-info
+  .Profile
+    .Profile__main-image
+      = image_tag "IMG_0488.png", class: "Profile__image"
+    .Profile__name
+      = @profile.nickname
+    .Profile__area
+      = @profile.prefecture.name
+    .Profile__introduction
+      = @profile.introduction
