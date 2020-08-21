@@ -1,7 +1,9 @@
-.post-index-wrapper {
+.post-show-wrapper {
   width: 100vw;
+  height: calc(100vh - 55px);
   background-color: #fffee0;
   padding: 50px 0 30px;
+  overflow: scroll;
 
   h2 {
     color: #646166;
