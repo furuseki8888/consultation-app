@@ -24,10 +24,10 @@
           %p.Post-index-btn__items--text
             投 稿 一 覧 へ
     
-    .post-index-wrapper
+    .post-recent-wrapper
       %h2 
         最 新 投 稿
-      .post-holder
+      .post-recent-holder
         - @posts.each do |post|
           .Post-item
             .Post-prof
@@ -41,8 +41,8 @@
                 = post.title
             .Post-item__text
               = post.content
-            .Post-empathy
-              %p.Post-empathy__text
-                共感
-              = icon('fas', 'heart', class: 'Post-empathy__icon')
-              %p.Post-empathy__number 10
+            .Post-item__empathy-count
+              %p
+                = post.liked_users.count
+                %span
+                  人が共感しています
