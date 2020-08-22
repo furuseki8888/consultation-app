@@ -95,19 +95,10 @@
       }
 
       .Empathy {
-        display: flex;
         font-size: 12px;
-        color: #9b9b9b;
-        margin-top: 4px;
-
-        &__text {
-          margin: 0 5px;
-        }
-
-        &__icon {
-          vertical-align: center;
-          margin: 4px 2px 0 0;
-        }
+        font-weight: bold;
+        color: #ff7a8f;
+        margin-top: 5px;
       }
     }
   }

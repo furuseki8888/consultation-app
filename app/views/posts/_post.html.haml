@@ -10,8 +10,8 @@
       = post.title
   .Post-item__text
     = post.content
-  .Post-empathy
-    %p.Post-empathy__text
-      共感
-    = icon('fas', 'heart', class: 'Post-empathy__icon')
-    %p.Post-empathy__number 10
+  .Post-item__empathy-count
+    %p
+      = post.liked_users.count
+      %span
+        人が共感しています

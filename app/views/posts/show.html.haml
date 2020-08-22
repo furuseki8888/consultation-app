@@ -12,9 +12,15 @@
         = @post.title
       .Post-item__text
         = @post.content
-      .Post-empathy
-        %p.Post-empathy__text
-          共感
-        = icon('fas', 'heart', class: 'Post-empathy__icon')
-        %p.Post-empathy__number 10
+      - if current_user
+        .Post-empathy
+          %p.Post-empathy__text 共感
+          - if current_user.already_liked?(@post)
+            = link_to post_like_path(@post), class: "Post-empathy__link, Post-empathy__link--red", method: :delete do
+              = icon('fas', 'heart', class: 'Post-empathy__icon')
+          - else
+            = link_to post_likes_path(@post), class: "Post-empathy__link, Post-empathy__link--gray", method: :post do
+              = icon('fas', 'heart', class: 'Post-empathy__icon')
+          %p.Post-empathy__number
+            = @post.likes.count
   = render "comment_form"

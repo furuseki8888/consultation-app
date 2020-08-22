@@ -58,20 +58,11 @@
         }
       }
 
-      .Post-empathy {
-        display: flex;
-        font-size: 12px;
-        color: #9b9b9b;
-        margin-top: 4px;
-
-        &__text {
-          margin: 0 5px;
-        }
-
-        &__icon {
-          vertical-align: center;
-          margin: 4px 2px 0 0;
-        }
+      &__empathy-count {
+        color: #ff7a8f;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 15px;
       }
     }
   }

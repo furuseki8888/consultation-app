@@ -5,16 +5,6 @@
   padding: 50px 0 30px;
   overflow: scroll;
 
-  h2 {
-    color: #646166;
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-    width: 150px;
-    margin: 0 auto 30px;
-    border-bottom: solid 4px #ff7a8f;
-  }
-
   .post-holder {
     width: 700px;
     margin: 0 auto 0;
@@ -62,17 +52,25 @@
 
       .Post-empathy {
         display: flex;
-        font-size: 12px;
-        color: #9b9b9b;
-        margin-top: 4px;
+        font-size: 13px;
+        font-weight: bold;
+        margin-top: 20px;
 
-        &__text {
-          margin: 0 5px;
+        &__link {
+          text-decoration: none;
+
+          &--red {
+            color: #ff7a8f;
+          }
+
+          &--gray {
+            color: #9b9b9b;
+          }
         }
 
         &__icon {
           vertical-align: center;
-          margin: 4px 2px 0 0;
+          margin: 3px 5px 0;
         }
       }
     }
