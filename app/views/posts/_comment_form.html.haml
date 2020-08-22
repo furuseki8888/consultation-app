@@ -1,16 +1,30 @@
 .comment-wrapper
   - if current_user
-    = form_with model: [@post, @comment], local: true  do |f|
-      = f.text_area :content, placeholder: "コメントする"
-      = f.submit "SEND", class: "form__submit"
+    .Comment-form
+      = form_with model: [@post, @comment], local: true  do |f|
+        .Comment-form__field
+          = f.text_area :content, placeholder: "コメントする", class: "Comment-form__area"
+        .Comment-form__field
+          = f.submit "送 信", class: "Comment-form__submit"
   - else
-    %p コメントの投稿には新規登録/ログインが必要です
-  .comments
-    %h4 コメント一覧
-    - if @comments
-      - @comments.each do |comment|
-        %p
-          = link_to comment.user.profile.nickname, "/users/#{comment.user_id}"
-        %p
-          = comment.content
-    
+    %p.comment-warning
+      コメントの投稿には新規登録/ログインが必要です
+  .comment-index-wrapper
+    .Comment-title
+      %h4.Comment-title__text
+        コメント
+      - if @comments
+        %p.Comment-title__number
+          = @comments.count
+          件
+      - else
+        %p.Comment-title__number
+          0件
+    .comment-list
+      - if @comments
+        - @comments.each do |comment|
+          .Comment-item
+            %p.Comment-item__name
+              = link_to comment.user.profile.nickname, "/users/#{comment.user_id}"
+            %p.Comment-item__text
+              = comment.content
