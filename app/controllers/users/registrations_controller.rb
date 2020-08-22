@@ -39,7 +39,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def profile_params
-    params.require(:profile).permit(:nickname, :prefecture_id, :introduction)
+    params.require(:profile).permit(:nickname, :prefecture_id, :introduction, :image)
   end
 
 
