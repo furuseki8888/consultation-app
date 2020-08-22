@@ -1,0 +1,16 @@
+.comment-wrapper
+  - if current_user
+    = form_with model: [@post, @comment], local: true  do |f|
+      = f.text_area :content, placeholder: "コメントする"
+      = f.submit "SEND", class: "form__submit"
+  - else
+    %p コメントの投稿には新規登録/ログインが必要です
+  .comments
+    %h4 コメント一覧
+    - if @comments
+      - @comments.each do |comment|
+        %p
+          = link_to comment.user.profile.nickname, "/users/#{comment.user_id}"
+        %p
+          = commnet.content
+    
