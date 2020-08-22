@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   end
   root "home#index"
   resources :users, only: :show
-  resources :posts, only: [:index, :new, :create, :show]
+  resources :posts, only: [:index, :new, :create, :show] do
+    resources :comments, only: :create
+  end
 end
