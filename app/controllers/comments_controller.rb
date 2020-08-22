@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     comment = Comment.new(comment_params)
-    if @post.save
+    if comment.save
       redirect_to "/posts/#{comment.post.id}"
     else
       render "/posts/#{comment.post.id}"
