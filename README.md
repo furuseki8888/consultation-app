@@ -11,12 +11,12 @@
     * パスワード：tttttt
 
 ## 特徴
-  * １つの投稿に対してコメントやいいね(共感)ができます。
-  <img width="1100" alt="v" src="https://user-images.githubusercontent.com/67250024/90983703-04262b00-e5ab-11ea-94a2-bb9458a5a83e.png">
-  * マイページで自分の投稿やどのくらい共感されているか確認できます。
-  <img width="1100" alt="cc" src="https://user-images.githubusercontent.com/67250024/90983644-9a0d8600-e5aa-11ea-8287-2a6fc36d32a8.png">
-  * トップページに最新投稿が5件表示されます。
-  <img width="836" alt="aa" src="https://user-images.githubusercontent.com/67250024/90983595-4d29af80-e5aa-11ea-8399-7afb90d3c54f.png">
+１つの投稿に対してコメントやいいね(共感)ができます。
+<img width="1100" alt="v" src="https://user-images.githubusercontent.com/67250024/90983703-04262b00-e5ab-11ea-94a2-bb9458a5a83e.png">
+マイページで自分の投稿やどのくらい共感されているか確認できます。
+<img width="1100" alt="cc" src="https://user-images.githubusercontent.com/67250024/90983644-9a0d8600-e5aa-11ea-8287-2a6fc36d32a8.png">
+トップページに最新投稿が5件表示されます。
+<img width="836" alt="aa" src="https://user-images.githubusercontent.com/67250024/90983595-4d29af80-e5aa-11ea-8399-7afb90d3c54f.png">
 
 ## 制作背景
 現代は技術が発達し便利な世の中ですが、それと同時に悩みも多様化していると感じます。私も日々様々なことに悩み、葛藤しながら生きています。
