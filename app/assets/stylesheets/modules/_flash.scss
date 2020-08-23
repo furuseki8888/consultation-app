@@ -1,13 +1,21 @@
 .Notification {
   .notice {
-    background-color: #3ccace;
+    height: 40px;
+    line-height: 40px;
     color: #fff;
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
+    background-color: #ffaf38;
   }
 
   .alert {
-    background-color: red;
+    height: 40px;
+    line-height: 40px;
     color: #fff;
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
+    background-color: red;
   }
 }
