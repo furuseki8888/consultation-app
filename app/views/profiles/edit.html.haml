@@ -1,0 +1,37 @@
+.User
+  %h1
+    =link_to "relife", root_path
+
+  .User__wrapper
+    %h2.User__title プロフィール編集
+    = form_with model: @profile, local: true do |f|
+      - if @profile.errors.any?
+        .profile-errors
+          %ul
+            - @profile.errors.full_messages.each do |profile|
+              %li= profile
+      .Profile-form
+        .Profile-form-wrapper
+          %ul.Profile-form__field
+            %li ニックネーム
+            %li.Profile-form__required 必須
+          = f.text_field :nickname, class: "Profile-form__input"
+
+        .Profile-form-wrapper
+          %ul.Profile-form__field
+            %li お住まいの地域
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: true, class: "Profile-form__select"
+
+      .User-form
+        %ul.User-form__field
+          %li 自己紹介
+        = f.text_area :introduction, class: "User-form__area"
+
+      .User-form
+        %ul.User-form__field
+          %li プロフィール写真
+        = f.file_field :image, class: "User-form__input"
+
+      .Information.Information--right
+        .Information__submit
+          = f.submit "登録する", class: "Information__submit--btn"
