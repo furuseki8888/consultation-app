@@ -1,10 +1,20 @@
 .profile-info
   .Profile
-    .Profile__main-image
-      = image_tag "IMG_0488.png", class: "Profile__image"
+    - if current_user.id == @user.id
+      .Profile-edit
+        = link_to edit_profile_path(@profile), class: "Profile-edit__link" do
+          = icon('fas', 'cog', class: 'Profile-edit__icon')
+    - if @profile.image.present?
+      .Profile__main-image
+        = image_tag @profile.image.url, class: "Profile__image"
+    - else
+      .Profile__main-image--empty
+        画像なし
     .Profile__name
       = @profile.nickname
-    .Profile__area
-      = @profile.prefecture.name
-    .Profile__introduction
-      = @profile.introduction
+    - if @profile.prefecture_id.present?
+      .Profile__area
+        = @profile.prefecture.name
+    - if @profile.introduction.present?
+      .Profile__introduction
+        = @profile.introduction
