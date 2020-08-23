@@ -7,6 +7,8 @@
     height: calc(100vh - 55px);
     background-color: #cdebc6;
     overflow: scroll;
+    position: relative;
+
 
     .Profile {
       width: 200px;
@@ -15,13 +17,26 @@
       &__main-image {
         padding: 20px 0 20px;
         text-align: center;
+
+        &--empty {
+          color: #646166;
+          width: 180px;
+          height: 180px;
+          line-height: 180px;
+          text-align: center;
+          margin: 20px 0 10px 10px;
+          border-radius: 40%;
+          background-color: #fffee0;
+        }
       }
+
       &__image {
         width: 180px;
         height: 180px;
         object-fit: cover;
         vertical-align: bottom;
         border-radius: 40%;
+        background-color: #fff;
       }
 
       &__name {
@@ -32,13 +47,13 @@
       }
 
       &__area {
-        width: 80px;
+        width: 100px;
         height: 30px;
         font-size: 16px;
         font-weight: bold;
         text-align: center;
-        background-color: #fffc99;
-        border: 1px solid #fffc99;
+        background-color: #f1ff2b;
+        border-bottom: solid 4px #bfbfbf;
         border-radius: 40%;
         margin: 10px auto 20px;
       }
@@ -46,6 +61,18 @@
       &__introduction {
         padding: 5px;
         background-color: #fff;
+      }
+
+      .Profile-edit {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+  
+        &__link {
+          color: #646166;
+          font-size: 25px;
+          text-decoration: none;
+        }
       }
     }
   }
