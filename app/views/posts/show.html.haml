@@ -8,7 +8,7 @@
             = link_to edit_post_path(@post), class: "Post-btn__link" do
               %p.Post-btn__text 編集
           .Post-btn
-            = link_to "#", class: "Post-btn__link" do
+            = link_to post_path(@post), method: :delete, data: {confirm: "削除しますか"}, class: "Post-btn__link" do
               %p.Post-btn__text 削除
       .Post-prof
         .Post-prof__name
