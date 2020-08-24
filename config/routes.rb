@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root "home#index"
   resources :users, only: :show
   resources :profiles, only: [:edit, :update]
-  resources :posts, only: [:index, :new, :create, :show, :edit, :update] do
+  resources :posts do
     resources :comments, only: :create
     resources :likes, only: [:create, :destroy]
   end
