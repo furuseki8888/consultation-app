@@ -1,17 +1,20 @@
-.post-new-form-wrapper {
+.post-form-wrapper {
   width: 100vw;
   height: calc(100vh - 53px);
   background-color: #cdebc6;
   color: #646166;
   padding: 30px 50px 0;
 
-  .post-new-form {
+  h1 {
+    width: 600px;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0 auto 0;
+  }
+
+  .post-input-field {
     width: 600px;
     margin: 0 auto 0;
-    h1 {
-      font-size: 26px;
-      font-weight: bold;
-    }
 
     .post-errors {
       color: red;

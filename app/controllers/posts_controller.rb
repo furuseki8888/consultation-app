@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-  before_action :login_required, only: [:new, :create]
+  before_action :set_post, only: [:show, :edit, :update]
+  before_action :login_required, only: [:new, :create, :edit, :update]
+  before_action :ensure_correct_user, only: [:edit, :update]
 
   def index
     @posts = Post.includes(:user).order('created_at DESC')
@@ -19,10 +21,21 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @like = Like.new
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
+  end
+
+  def edit
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to root_path, notice: '投稿を更新しました'
+    else
+      render :edit
+    end
   end
 
   private
@@ -31,9 +44,19 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :content).merge(user_id: current_user.id)
   end
 
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
   def login_required
     unless user_signed_in?
       redirect_to root_path, notice: "ログインしてください"
+    end
+  end
+
+  def ensure_correct_user
+    if @post.user_id != current_user.id
+      redirect_to root_path, notice: '権限がありません'
     end
   end
 end
