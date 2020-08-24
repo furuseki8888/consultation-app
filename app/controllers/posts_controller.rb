@@ -42,7 +42,7 @@ class PostsController < ApplicationController
     if @post.destroy 
       redirect_to root_path, notice: "投稿の削除が完了しました"
     else
-      redirect_to root_path, notice: "権限がありません"
+      redirect_to root_path, alert: "権限がありません"
     end
   end
 
