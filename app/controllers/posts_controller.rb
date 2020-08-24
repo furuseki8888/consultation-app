@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
-  before_action :login_required, only: [:new, :create]
+  before_action :login_required, only: [:new, :create, :edit, :update]
+  before_action :ensure_correct_user, only: [:edit, :update]
 
   def index
     @posts = Post.includes(:user).order('created_at DESC')
@@ -50,6 +51,12 @@ class PostsController < ApplicationController
   def login_required
     unless user_signed_in?
       redirect_to root_path, notice: "ログインしてください"
+    end
+  end
+
+  def ensure_correct_user
+    if @post.user_id != current_user.id
+      redirect_to root_path, notice: '権限がありません'
     end
   end
 end
