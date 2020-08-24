@@ -2,6 +2,14 @@
 .post-show-wrapper
   .post-holder
     .Post-item
+      - if current_user.id == @post.user_id
+        .post-btn-list
+          .Post-btn
+            = link_to "#", class: "Post-btn__link" do
+              %p.Post-btn__text 編集
+          .Post-btn
+            = link_to "#", class: "Post-btn__link" do
+              %p.Post-btn__text 削除
       .Post-prof
         .Post-prof__name
           = link_to user_path(@post.user.id) do
