@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit]
+  before_action :set_post, only: [:show, :edit, :update]
   before_action :login_required, only: [:new, :create]
 
   def index
@@ -26,6 +26,15 @@ class PostsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to root_path, notice: '投稿を更新しました'
+    else
+      render :edit
+    end
   end
 
   private
