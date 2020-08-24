@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update]
-  before_action :login_required, only: [:new, :create, :edit, :update]
-  before_action :ensure_correct_user, only: [:edit, :update]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :login_required, except: [:index, :show]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.includes(:user).order('created_at DESC')
@@ -38,6 +38,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    if @post.destroy 
+      redirect_to root_path, notice: "投稿の削除が完了しました"
+    else
+      redirect_to root_path, notice: "権限がありません"
+    end
+  end
+
   private
 
   def post_params
@@ -50,13 +58,13 @@ class PostsController < ApplicationController
 
   def login_required
     unless user_signed_in?
-      redirect_to root_path, notice: "ログインしてください"
+      redirect_to root_path, alert: "ログインしてください"
     end
   end
 
   def ensure_correct_user
     if @post.user_id != current_user.id
-      redirect_to root_path, notice: '権限がありません'
+      redirect_to root_path, alert: '権限がありません'
     end
   end
 end
