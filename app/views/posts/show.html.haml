@@ -2,7 +2,7 @@
 .post-show-wrapper
   .post-holder
     .Post-item
-      - if current_user.id == @post.user_id
+      - if user_signed_in? && current_user.id == @post.user_id
         .post-btn-list
           .Post-btn
             = link_to edit_post_path(@post), class: "Post-btn__link" do
