@@ -8,6 +8,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find_by(id: params[:id], post_id: params[:post_id])
+    if comment.destroy 
+      redirect_to post_path(comment.post_id)
+    else
+      redirect_to root_path, alert: "権限がありません"
+    end
+  end
+
   private
 
   def comment_params

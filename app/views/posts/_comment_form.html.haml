@@ -28,3 +28,7 @@
               = link_to comment.user.profile.nickname, "/users/#{comment.user_id}"
             %p.Comment-item__text
               = comment.content
+            - if user_signed_in? && current_user.id == comment.user_id
+              %p.Comment-item__delete
+                = link_to post_comment_path(comment.post.id, comment.id), method: :delete do
+                  = icon('fas', 'times')
