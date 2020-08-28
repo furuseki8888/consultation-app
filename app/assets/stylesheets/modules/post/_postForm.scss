@@ -29,21 +29,11 @@
         }
 
         &__input {
-          width: 600px;
-          height: 40px;
-          padding: 8px 16px;
-          border: 1px solid #ccc;
-          border-radius: 3px;
-          background-color: #f8f8f8;
+          @include input_field(600px);
         }
 
         &__area {
-          width: 600px;
-          height: 300px;
-          padding: 8px 16px;
-          border: 1px solid #ccc;
-          border-radius: 3px;
-          background-color: #f8f8f8;
+          @include input_field(600px, 300px);
         }
       }
     }
@@ -54,16 +44,8 @@
       padding-left: 180px;
 
       &__btn {
-        color: #fff;
-        font-size: 18px;
-        font-weight: bold;
-        width: 230px;
-        height: 50px;
-        border-style: none;
+        @include submit_button(230px, #fff, #71d19e);
         border-bottom: solid 4px #627295;
-        border-radius: 10px;
-        background-color: #71d19e;
-        cursor: pointer;
       }
     }
   }

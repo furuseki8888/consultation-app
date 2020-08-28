@@ -1,15 +1,15 @@
 = link_to post_path(post.id) do
-  .Post-item
-    .Post-prof
-      .Post-prof__name
+  .Mypost-item
+    .Mypost-prof
+      .Mypost-prof__name
         = post.user.profile.nickname
-      .Post-prof__time
+      .Mypost-prof__time
         = post.created_at.strftime("%Y/%m/%d %H:%M")
-    .Post-item__title
+    .Mypost-item__title
       = post.title
-    .Post-item__text
+    .Mypost-item__text
       = post.content
-    .Post-item__empathy-count
+    .Mypost-item__empathy-count
       %p
         = post.liked_users.count
         %span

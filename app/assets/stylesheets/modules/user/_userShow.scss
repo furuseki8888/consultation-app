@@ -3,7 +3,7 @@
 
   // プロフィール
   .profile-info {
-    width: 250px;
+    width: 300px;
     height: calc(100vh - 55px);
     background-color: #cdebc6;
     overflow: scroll;
@@ -11,7 +11,7 @@
 
 
     .Profile {
-      width: 200px;
+      width: 240px;
       margin: 10px auto;
       
       &__main-image {
@@ -79,55 +79,56 @@
 
 
   // 投稿
-  .posts {
-    width: calc(100vw - 200px);
+  .mypost-wrapper {
+    width: calc(100vw - 300px);
     height: calc(100vh - 55px);
     background-color: #fffee0;
     padding: 15px;
     overflow: scroll;
-
-    .Post {
-      margin-bottom: 40px;
-
-      .User-prof {
-        display: flex;
-
-        &__name {
-          color: #00b05e;
+  
+    .mypost-holder {
+      width: 700px;
+      margin: 0 auto 0;
+  
+      .Mypost-item {
+        color: #424b54;
+        background-color: #e0ffd9;
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        border-bottom: solid 4px #bfbfbf;
+  
+        .Mypost-prof {
+          display: flex;
+  
+          &__name {
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 5px;
+            color: #00b05e;
+          }
+  
+          &__time {
+            color: #9b9b9b;
+            font-size: 12px;
+          }
+        }
+  
+  
+        &__title {
+          font-size: 18px;
+          font-weight: bold;
+          border-bottom: 1px solid #9b9b9b;
+          margin-bottom: 5px;
+        }
+  
+        &__empathy-count {
+          color: #ff7a8f;
           font-size: 14px;
           font-weight: bold;
+          margin-top: 15px;
         }
-
-        &__time {
-          color: #9b9b9b;
-          font-size: 12px;
-          margin-left: 10px;
-        }
-      }
-
-      &__title {
-        color: #424b54;
-        font-size: 18px;
-        font-weight: bold;
-        border-bottom: 1px solid #9b9b9b;
-        margin-bottom: 5px;
-
-        a {
-          color: #424b54;
-          text-decoration: none;
-        }
-      }
-      &__text {
-        color: #424b54;
-      }
-
-      .Empathy {
-        font-size: 12px;
-        font-weight: bold;
-        color: #ff7a8f;
-        margin-top: 5px;
       }
     }
   }
-
 }

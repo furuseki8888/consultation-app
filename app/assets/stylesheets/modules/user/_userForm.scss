@@ -1,0 +1,150 @@
+// 必須表示
+@mixin required {
+  width: 25px;
+  height: 18px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  border: 1px solid #ff809c;
+  border-radius: 2px;
+  margin: 2px 0 2px 10px;
+  background-color: #ff809c;
+}
+
+
+.User {
+  width: 100vw;
+  height: 100vh;
+  color: #646166;
+  background-color: #cdebc6;
+  padding: 100px 0;
+  position: relative;
+  overflow: scroll;
+
+  // ロゴ
+  h1 {
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    right: 46%;
+
+    a {
+      color: #646166;
+    }
+  }
+
+  // フォーム
+  &__wrapper {
+    font-size: 14px;
+    width: 600px;
+    margin: 0 auto;
+    padding: 30px 60px;
+    background-color: #fff;
+
+    // 新規登録フォームエラー
+    #error_explanation {
+      color: red;
+    }
+
+    // 編集フォームエラー
+    .edit-errors {
+      color: red;
+    }
+  
+    // フォームタイトル
+    h2 {
+      color: #71d19e;
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    // 基本フォーム
+    .User-form {
+      margin-top: 20px;
+
+      &__field {
+        display: flex;
+      }
+
+      &__required {
+        @include required;
+      }
+
+      &__input {
+        @include input_field(480px);
+      }
+
+      &__area {
+        @include input_field(480px, 120px);
+      }
+    }
+
+    // 氏名入力
+    .Name-form {
+      display: flex;
+      justify-content: space-between;
+
+      &__wrapper {
+        margin-top: 20px;
+      }
+
+      &__field {
+        display: flex;
+      }
+
+      &__required {
+        @include required;
+      }
+
+      &__input {
+        @include input_field(230px);
+      }
+    }
+
+    // プロフィール入力
+    .Profile-form {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      &__field {
+        display: flex;
+      }
+
+      &__required {
+        @include required;
+      }
+
+      &__select {
+        @include input_field(100px);
+      }
+      
+      &__input {
+        @include input_field(350px);
+      }
+    }
+
+    // 送信ボタン
+    .Information {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+
+      &--right {
+        margin-left: 250px;
+      }
+
+      &__link {
+        color: #53b17f;
+      }
+
+      &__submit {
+        &--btn {
+          @include submit_button(230px,#fff, #71d19e);
+        }
+      }
+    }
+  }
+}

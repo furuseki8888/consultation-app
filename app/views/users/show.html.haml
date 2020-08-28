@@ -2,4 +2,6 @@
 
 .mypage-wrapper
   = render "profile"
-  = render "posts"
+  .mypost-wrapper
+    .mypost-holder
+      = render partial: "users/post", collection: @posts

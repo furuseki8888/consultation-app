@@ -10,39 +10,20 @@
 
   .hero-wrapper
     .Hero
-      %p.Hero__message.Hero__message--large
+      %p.Hero__main-message
         もう1人で悩まないで
       %p.Hero__message
-        今の悩みを共有しましょう
-      %p.Hero__message
+        今の悩みを共有してみましょう
+      %p.Hero__message.Hero__message--large
         意外と簡単に解決するかもしれません
   
   .main-wrapper
     .Post-index-btn
       = link_to posts_path, class: "Post-index-btn__link" do
-        .Post-index-btn__items
-          %p.Post-index-btn__items--text
-            投 稿 一 覧 へ
+        %p.Post-index-btn__text
+          投 稿 一 覧 へ
     
-    .post-recent-wrapper
-      %h2 
-        最 新 投 稿
-      .post-recent-holder
-        - @posts.each do |post|
-          .Post-item
-            .Post-prof
-              .Post-prof__name
-                = link_to user_path(post.user.id) do
-                  = post.user.profile.nickname
-              .Post-prof__time
-                = post.created_at.strftime("%Y/%m/%d %H:%M")
-            .Post-item__title
-              = link_to post_path(post.id) do
-                = post.title
-            .Post-item__text
-              = post.content
-            .Post-item__empathy-count
-              %p
-                = post.liked_users.count
-                %span
-                  人が共感しています
+    .post-wrapper
+      %h2 最 新 投 稿
+      .post-holder
+        = render partial: "posts/post", collection: @posts

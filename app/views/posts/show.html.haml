@@ -1,6 +1,6 @@
 = render "home/header"
 .post-show-wrapper
-  .post-holder
+  .post-show-holder
     .Post-item
       - if user_signed_in? && current_user.id == @post.user_id
         .post-btn-list

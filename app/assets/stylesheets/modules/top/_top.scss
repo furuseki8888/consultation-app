@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
+}
+
+.top-wrapper {
+
+  // 投稿ボタン
+  .Post-btn {
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    background-color: #71d19e;
+    border-radius: 10%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    &__link {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    &__items {
+      width: 90px;
+      height: 90px;
+      padding: 5px;
+
+      &--icon {
+        font-size: 50px;
+      }
+    }
+  }
+
+  // ヒーローイメージ
+  .hero-wrapper {
+    background-image: image-url("dawn-3.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 500px;
+
+    .Hero {
+      padding: 100px 0 0 80px;
+
+      &__main-message {
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0,0,0,0.8);
+        font-size: 40px;
+        margin-bottom: 40px;
+      }
+      &__message {
+        width: 280px;
+        color: #5c574a;
+        font-size: 20px;
+        border-bottom: 2px solid #ff7a8f;
+        margin-bottom: 10px;
+
+        &--large {
+          width: 350px;
+        }
+      }
+    }
+  }
+
+  // 最新投稿一覧
+  .main-wrapper {
+    width: 100vw;
+    height: calc(100% - 555px);
+    background-color: #fffee0;
+    padding: 40px 0 40px;
+
+    // 投稿一覧ボタン
+    .Post-index-btn {
+      @include link_button(400px, 70px, #cdebc6, 15px, 23px);
+      margin: 0 auto 30px;
+    }
+  }
+}
