@@ -1,0 +1,38 @@
+// 送信ボタン
+
+@mixin submit_button($width, $color, $border-color) {
+  width: $width;
+  height: 50px;
+  color: $color;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  background-color: $border-color;
+  cursor: pointer;
+}
+
+
+
+// リンクボタン
+
+@mixin link_button($width, $height, $color, $size, $font-size, $link-color: #646166) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+  border-bottom: solid 4px #bfbfbf;
+  border-radius: $size;
+
+  &__link {
+    color: $link-color;
+    font-size: $font-size;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__text {
+    width: $width;
+    height: $height;
+    padding-top: $size;
+  }
+}

@@ -1,0 +1,10 @@
+// フォーム入力欄
+
+@mixin input_field($width, $height: 45px) {
+  width: $width;
+  height: $height;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+}
