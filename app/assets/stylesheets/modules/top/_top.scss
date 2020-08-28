@@ -51,14 +51,21 @@
     .Hero {
       padding: 100px 0 0 80px;
 
-      &__message {
+      &__main-message {
         color: #fff;
         text-shadow: 0 0 5px rgba(0,0,0,0.8);
+        font-size: 40px;
+        margin-bottom: 40px;
+      }
+      &__message {
+        width: 280px;
+        color: #5c574a;
         font-size: 20px;
+        border-bottom: 2px solid #ff7a8f;
+        margin-bottom: 10px;
 
         &--large {
-          font-size: 40px;
-          margin-bottom: 40px;
+          width: 350px;
         }
       }
     }
