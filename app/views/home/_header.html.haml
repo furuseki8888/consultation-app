@@ -6,13 +6,12 @@
     .Header__items
       - if user_signed_in?
         %p
-          = current_user.profile.nickname
-        %p
           = link_to "マイページ", user_path(current_user.id)
         %p
           = link_to "ログアウト", destroy_user_session_path, method: :delete
         %p
           = link_to edit_user_path(current_user) do
+            = current_user.profile.nickname
             = icon('fas', 'cog')
       - else
         %p
