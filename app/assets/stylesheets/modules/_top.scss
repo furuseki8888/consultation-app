@@ -64,7 +64,7 @@
     }
   }
 
-  // 投稿表示箇所
+  // 最新投稿一覧
   .main-wrapper {
     width: 100vw;
     height: calc(100% - 555px);
@@ -75,76 +75,6 @@
     .Post-index-btn {
       @include link_button(400px, 70px, #cdebc6, 15px, 23px);
       margin: 0 auto 30px;
-    }
-
-    .post-recent-wrapper {
-      width: 100vw;
-      background-color: #fffee0;
-      padding: 50px 0 30px;
-    
-      h2 {
-        color: #646166;
-        text-align: center;
-        font-size: 25px;
-        font-weight: bold;
-        width: 150px;
-        margin: 0 auto 30px;
-        border-bottom: solid 4px #ff7a8f;
-      }
-    
-      .post-recent-holder {
-        width: 700px;
-        margin: 0 auto 0;
-    
-        .Post-item {
-          color: #424b54;
-          background-color: #e0ffd9;
-          padding: 30px;
-          margin-bottom: 20px;
-          border-radius: 20px;
-          border-bottom: solid 4px #bfbfbf;
-    
-          .Post-prof {
-            display: flex;
-    
-            &__name {
-              font-size: 14px;
-              font-weight: bold;
-              margin-right: 5px;
-    
-              a {
-                color: #00b05e;
-                text-decoration :none;
-              }
-            }
-    
-            &__time {
-              color: #9b9b9b;
-              font-size: 12px;
-            }
-          }
-    
-    
-          &__title {
-            font-size: 18px;
-            font-weight: bold;
-            border-bottom: 1px solid #9b9b9b;
-            margin-bottom: 5px;
-    
-            a {
-              color: #424b54;
-              text-decoration: none;
-            }
-          }
-
-          &__empathy-count {
-            color: #ff7a8f;
-            font-size: 14px;
-            font-weight: bold;
-            margin-top: 15px;
-          }
-        }
-      }
     }
   }
 }

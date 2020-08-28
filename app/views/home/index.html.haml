@@ -23,8 +23,7 @@
         %p.Post-index-btn__text
           投 稿 一 覧 へ
     
-    .post-recent-wrapper
-      %h2 
-        最 新 投 稿
-      .post-recent-holder
+    .post-wrapper
+      %h2 最 新 投 稿
+      .post-holder
         = render partial: "posts/post", collection: @posts
