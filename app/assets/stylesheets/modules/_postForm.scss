@@ -29,21 +29,11 @@
         }
 
         &__input {
-          width: 600px;
-          height: 40px;
-          padding: 8px 16px;
-          border: 1px solid #ccc;
-          border-radius: 3px;
-          background-color: #f8f8f8;
+          @include input_field(600px);
         }
 
         &__area {
-          width: 600px;
-          height: 300px;
-          padding: 8px 16px;
-          border: 1px solid #ccc;
-          border-radius: 3px;
-          background-color: #f8f8f8;
+          @include input_field(600px, 300px);
         }
       }
     }

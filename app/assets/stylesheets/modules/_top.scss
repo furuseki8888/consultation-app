@@ -1,5 +1,10 @@
 * {
   box-sizing: border-box;
+
+  a {
+    text-decoration: none;
+  }
+
   a:hover {
     opacity: 0.5;
   }
@@ -19,7 +24,6 @@
     right: 30px;
 
     &__link {
-      text-decoration: none;
       color: #fff;
       font-weight: bold;
     }
@@ -69,29 +73,8 @@
 
     // 投稿一覧ボタン
     .Post-index-btn {
-      background-color: #cdebc6;
-      width: 400px;
-      height: 70px;
-      border-radius: 20px;
-      border-bottom: solid 4px #bfbfbf;
+      @include link_button(400px, 70px, #cdebc6, 15px, 23px);
       margin: 0 auto 30px;
-
-      &__link {
-        color: #646166;
-        font-size: 23px;
-        font-weight: bold;
-        text-decoration: none;
-        text-align: center;
-      }
-
-      &__items {
-        width: 400px;
-        height: 70px;
-
-        &--text {
-          padding-top: 15px;
-        }
-      }
     }
 
     .post-recent-wrapper {

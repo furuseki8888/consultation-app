@@ -20,7 +20,7 @@
         .Profile-form-wrapper
           %ul.Profile-form__field
             %li お住まいの地域
-          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: true, class: "Profile-form__select"
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: true}, {class: "Profile-form__select"}
 
       .User-form
         %ul.User-form__field
@@ -34,4 +34,4 @@
 
       .Information.Information--right
         .Information__submit
-          = f.submit "登録する", class: "Information__submit--btn"
+          = f.submit "登 録 す る", class: "Information__submit--btn"
