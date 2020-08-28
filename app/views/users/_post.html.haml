@@ -1,0 +1,16 @@
+.Post
+  .User-prof
+    .User-prof__name
+      = post.user.profile.nickname
+    .User-prof__time
+      = post.created_at.strftime("%Y/%m/%d %H:%M")
+  .Post__title
+    = link_to post_path(post.id) do
+      = post.title
+  .Post__text
+    = post.content
+  .Empathy
+    %p.Empathy__count
+      = post.liked_users.count
+      %span
+        人が共感しています
