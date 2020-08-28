@@ -44,16 +44,8 @@
       padding-left: 180px;
 
       &__btn {
-        color: #fff;
-        font-size: 18px;
-        font-weight: bold;
-        width: 230px;
-        height: 50px;
-        border-style: none;
+        @include submit_button(230px, #fff, #71d19e);
         border-bottom: solid 4px #627295;
-        border-radius: 10px;
-        background-color: #71d19e;
-        cursor: pointer;
       }
     }
   }
