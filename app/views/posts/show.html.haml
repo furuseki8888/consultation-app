@@ -19,16 +19,7 @@
       .Post-item__title
         = @post.title
       .Post-item__text
-        = @post.content
-      - if current_user
-        .Post-empathy
-          %p.Post-empathy__text 共感
-          - if current_user.already_liked?(@post)
-            = link_to post_like_path(@post), class: "Post-empathy__link, Post-empathy__link--red", method: :delete do
-              = icon('fas', 'heart', class: 'Post-empathy__icon')
-          - else
-            = link_to post_likes_path(@post), class: "Post-empathy__link, Post-empathy__link--gray", method: :post do
-              = icon('fas', 'heart', class: 'Post-empathy__icon')
-          %p.Post-empathy__number
-            = @post.likes.count
+        = @post.content     
+      .like{id: "like_#{@post.id}"}
+        = render partial: "likes/like", locals: { post: @post }
   = render "comment_form"
