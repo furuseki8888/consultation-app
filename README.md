@@ -1,5 +1,5 @@
 # アプリ名：「relief」
-<img width="1102" alt="hero" src="https://user-images.githubusercontent.com/67250024/90983504-afce7b80-e5a9-11ea-869a-e16b0667570e.png">
+<img width="1350" alt="hero" src="https://user-images.githubusercontent.com/67250024/91641655-d3d60500-ea60-11ea-8763-85fcdf8ec3f2.png">
 
 ## 概要
 悩みを投稿して、みんなで解決方法や気持ちを軽くする方法を考えたり共有できるアプリです。
@@ -12,9 +12,11 @@
 
 ## 特徴
 １つの投稿に対してコメントやいいね(共感)ができます。
-<img width="1100" alt="v" src="https://user-images.githubusercontent.com/67250024/90983703-04262b00-e5ab-11ea-94a2-bb9458a5a83e.png">
+<img width="1045" alt="post" src="https://user-images.githubusercontent.com/67250024/91641673-f6681e00-ea60-11ea-99be-713fe398223e.png">
+
 マイページで自分の投稿やどのくらい共感されているか確認できます。
-<img width="1100" alt="cc" src="https://user-images.githubusercontent.com/67250024/90983644-9a0d8600-e5aa-11ea-8287-2a6fc36d32a8.png">
+<img width="1045" alt="user" src="https://user-images.githubusercontent.com/67250024/91641682-14ce1980-ea61-11ea-8775-bd9e7e2f847f.png">
+
 トップページに最新投稿が5件表示されます。
 <img width="836" alt="aa" src="https://user-images.githubusercontent.com/67250024/90983595-4d29af80-e5aa-11ea-8399-7afb90d3c54f.png">
 
@@ -30,7 +32,6 @@
 ## 使用技術
   * Ruby
   * Ruby on Rails
-  * Java Script
   * jQuery
   * haml,sass
 
